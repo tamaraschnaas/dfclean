@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  tests:
+    build: .
+    command: pytest tests/ -v --tb=short
+    volumes: [".:/app"]
+  demo:
+    build: .
+    command: python docker/demo.py
+    volumes: [".:/app"]
